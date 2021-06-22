@@ -5,6 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "nodemon --inspect src/app.js",
+    "watch":"node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,10 +24,14 @@
   "homepage": "https://github.com/bachtn002/blog_nodejs#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.2"
+    "express-handlebars": "^5.3.2",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.6.2",
+    "upper-case": "^2.0.2"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
+    "node-sass": "^6.0.0",
     "nodemon": "^2.0.7"
   }
 }
