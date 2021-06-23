@@ -5,7 +5,11 @@ const morgan = require('morgan');
 const expressHandlebar = require('express-handlebars');
 const path = require('path');
 const app = express();
+const mongodb = require('./config/db/connectDb');
 
+//Connect to db
+
+mongodb.connect();
 // Static files 
 app.use(express.static(path.join(__dirname, 'public')));
 
