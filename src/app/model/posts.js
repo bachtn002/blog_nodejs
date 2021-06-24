@@ -5,7 +5,7 @@ const posts = new Schema({
     name: { type: String },
     description: { type: String },
     image: { type: String },
-    createdUtcDate: { type: Date, default: Date.now },
+    createdUtcDate: { type: Date, default: Date.now},
     modifiedUtcDate: { type: Date, default: Date.now },
 });
 

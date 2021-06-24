@@ -1,13 +1,16 @@
 
 const posts = require('../model/posts');
-
+const {multipleMongooseToObject} =require('../../config/mongoose/mongoose');
 class SiteController {
     // GET / 
-    index(req, res) {
-        posts.find({}, (err, po) => {
-            if (!err) { res.json(po); }
-            else { res.status(400).json({ error: 'Error!!!' }); }
-        });
+    index(req, res, next) {
+        posts.find({})
+            .then(postsblog =>{
+                res.render('home',{
+                    postsblog:multipleMongooseToObject(postsblog)
+                });
+            })
+            .catch(next);
     }
 
     //GET /search/
@@ -15,4 +18,4 @@ class SiteController {
         response.render('search');
     }
 }
-module.exports = new SiteController;
+module.exports = new SiteController();

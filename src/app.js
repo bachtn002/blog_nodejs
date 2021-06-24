@@ -7,6 +7,7 @@ const path = require('path');
 const app = express();
 const mongodb = require('./config/db/connectDb');
 
+app.use(express.json());
 //Connect to db
 
 mongodb.connect();
@@ -29,5 +30,5 @@ const route = require('./routes/index.js');
 route(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });
